@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venturing to the GenAI World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            font-family: 'Orbitron', sans-serif;
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: blur(8px);
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            height: 100vh; /* Make container fill the viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Space out the sections */
+        }
+        .header-section {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 0; /* Reduce padding */
+            text-align: center;
+        }
+        .video-section {
+            flex-grow: 2; /* Allow video section to grow and fill available space */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center video */
+            overflow: hidden; /* Hide overflow */
+        }
+        .video-section video {
+            max-width: 100%; /* Limit video width to avoid overflow */
+            max-height: 100%; /* Adjust video height as needed */
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 0; /* Reduce padding */
+            text-align: center;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block; /* Center button */
+        }
+    </style>
+</head>
+<body>
+
+<video autoplay muted loop class="background-video">
+    <source src="vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div class="container">
+    <div class="header-section">
+        <h1>Welcome to the GenAI World</h1>
+        <p>Venture the world of Generative AI Together.</p>
+    </div>
+
+    <div class="video-section">
+        <video autoplay muted loop controls style="max-width: 100%; max-height: 50vh;">
+            <source src="vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content">
+        <h2>Discover GenAI</h2>
+        <p>Join us to unlock the potential of Generative AI.</p>
+        <a href="page.html" class="btn">Learn More</a>
+    </div>
+</div>
+
+</body>
+</html>
