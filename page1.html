@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venture to the GenAI World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000; /* Ensures a consistent background behind the video */
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .overlay {
+            position: relative;
+            z-index: 2;
+            padding: 40px 20px; /* Adjusted padding */
+        }
+        .title-section {
+            text-align: center;
+            padding: 40px 20px; /* Increased padding for better focus */
+            background-color: rgba(0, 0, 0, 0.7); /* Darker for better readability */
+            color: #FFFFFF;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 30px; /* Increased spacing */
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            color: white;
+            opacity: 0; /* Start invisible for fade-in */
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            flex-wrap: wrap; /* Ensure responsiveness */
+        }
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .text-section, .image-section {
+            flex: 1 1 45%; /* Adjust flex-basis for responsiveness */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+        .text-section {
+            font-size: 18px; /* Enhanced readability */
+        }
+        .image-section img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* More pronounced shadow for images */
+        }
+        .btn, .back-to-main {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 12px 24px; /* Slightly larger buttons */
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+        }
+        .btn:hover, .back-to-main:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        .back-to-main {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<video autoplay muted loop class="video-background">
+    <source src="vid2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div class="overlay">
+    <div class="title-section">
+        <h1>Explore the Universe of GenAI</h1>
+        <p>Dive into the future with GenAI</p>
+    </div>
+
+    <div class="container fade-in">
+        <div class="text-section">
+            <h2>Empower Your Creativity</h2>
+            <p>Unleash the potential of generative AI and transform your innovative ideas into reality.</p>
+        </div>
+        <div class="image-section">
+            <img src="img2.webp" alt="Creative AI">
+        </div>
+    </div>
+    
+    <div class="container fade-in" style="flex-direction: row-reverse;">
+        <div class="text-section">
+            <h2>Innovate and Inspire</h2>
+            <p>Join us in exploring the cutting-edge technologies that are shaping the future.</p>
+        </div>
+        <div class="image-section">
+            <img src="img.webp" alt="Innovative Technology">
+        </div>
+    </div>
+
+    <a href="index.html" class="back-to-main">Back to Main Page</a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach((section) => {
+            observer.observe(section);
+        });
+    });
+</script>
+
+</body>
+</html>
